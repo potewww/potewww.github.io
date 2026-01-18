@@ -31,9 +31,10 @@ nav a:hover {
 }
 
 .fototessera {
-  width: 35mm;   /* Larghezza standard fototessera */
-  height: 45mm;  /* Altezza standard fototessera */
-  object-fit: cover;  /* Taglia l'immagine mantenendo le proporzioni */
-  display: block;
-  margin-bottom: 20px;  /* Spazio sotto la foto */
+  width: 130px;
+  height: 170px;
+  object-fit: cover;
+  float: left;  /* Fa "galleggiare" l'immagine a sinistra */
+  margin-right: 20px;  /* Spazio tra foto e testo */
+  margin-bottom: 15px;  /* Spazio sotto la foto */
 }
