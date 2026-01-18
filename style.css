@@ -29,3 +29,11 @@ nav a:hover {
   background: white;
   border-radius: 8px;
 }
+
+.fototessera {
+  width: 35mm;   /* Larghezza standard fototessera */
+  height: 45mm;  /* Altezza standard fototessera */
+  object-fit: cover;  /* Taglia l'immagine mantenendo le proporzioni */
+  display: block;
+  margin-bottom: 20px;  /* Spazio sotto la foto */
+}
