@@ -34,7 +34,7 @@ nav a:hover {
   width: 130px;
   height: 170px;
   object-fit: cover;
-  float: right;  /* Fa "galleggiare" l'immagine a sinistra */
-  margin-right: 20px;  /* Spazio tra foto e testo */
-  margin-bottom: 15px;  /* Spazio sotto la foto */
+  float: right;
+  margin-left: 20px;  /* CAMBIATO: margin-left invece di margin-right */
+  margin-bottom: 15px;
 }
