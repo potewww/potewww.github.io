@@ -8,19 +8,35 @@ body {
 }
 
 nav {
-  display: none;
+  background-color: rgba(142, 69, 133, 0.3);
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: normal;
+  font-size: 0.95rem;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 60px;
+  margin: 40px auto;
+  padding: 60px;
   background: transparent;
   border-radius: 0;
   display: flex;
-  gap: 80px;
-  align-items: center;
-  min-height: 100vh;
+  gap: 60px;
+  align-items: flex-start;
 }
 
 .content-left {
@@ -30,8 +46,9 @@ nav {
 .content-right {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 60px;
 }
 
 .fototessera {
@@ -45,49 +62,30 @@ nav {
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.5px;
-  line-height: 1.2;
-  color: #ffffff;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
 }
 
 .content-left p, .content-left ul {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  margin: 0.4rem 0;
-  font-weight: 300;
-  color: #e8e8e8;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0.3rem 0;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  margin: 0.5rem 0;
 }
 
 li {
-  margin: 0.4rem 0;
-  color: #e8e8e8;
-}
-
-a {
-  color: #e8e8e8;
-  text-decoration: none;
-  transition: all 0.3s;
-  border-bottom: 1px solid transparent;
-}
-
-a:hover {
-  color: #ffffff;
-  border-bottom: 1px solid #ffffff;
+  margin: 0.3rem 0;
 }
