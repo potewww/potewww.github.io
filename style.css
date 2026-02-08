@@ -11,6 +11,7 @@ nav {
   background-color: rgba(142, 69, 133, 0.3);
   padding: 1rem;
   backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 nav a {
@@ -35,6 +36,7 @@ nav a:hover {
   border-radius: 0;
   display: flex;
   gap: 60px;
+  align-items: flex-start;
 }
 
 .content-left {
@@ -44,8 +46,9 @@ nav a:hover {
 .content-right {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 60px;
 }
 
 .fototessera {
@@ -61,21 +64,21 @@ nav a:hover {
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.5px;
 }
 
 h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .content-left p, .content-left ul {
   font-size: 1.3rem;
-  line-height: 1.8;
-  margin: 0.5rem 0;
+  line-height: 1.6;
+  margin: 0.3rem 0;
 }
 
 ul {
@@ -84,5 +87,5 @@ ul {
 }
 
 li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
