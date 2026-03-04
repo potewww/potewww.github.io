@@ -89,3 +89,14 @@ ul {
 li {
   margin: 0.3rem 0;
 }
+
+
+
+.container a {
+  color: white;
+  text-decoration: underline;
+}
+
+.container a:hover {
+  color: #cccccc; /* grigio chiaro al passaggio del mouse */
+}
