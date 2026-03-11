@@ -97,6 +97,15 @@ li {
   text-decoration: underline;
 }
 
+.riga {
+  display: flex;
+  gap: 2rem;
+}
+
+.riga p {
+  flex: 1;
+}
+
 .container a:hover {
   color: #cccccc; /* grigio chiaro al passaggio del mouse */
 }
