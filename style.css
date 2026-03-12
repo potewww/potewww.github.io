@@ -108,7 +108,7 @@ li {
   gap: 2rem;
   justify-content: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 0 0 10%;;
 }
 .riga p {
   flex: 1;
