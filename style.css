@@ -109,3 +109,9 @@ li {
 .container a:hover {
   color: #cccccc; /* grigio chiaro al passaggio del mouse */
 }
+
+.container-appunti {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
