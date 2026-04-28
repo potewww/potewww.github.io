@@ -8,7 +8,7 @@ body {
 }
 
 nav {
-  background-color: rgba(142, 69, 133, 0.3);
+  background-color: rgb(10, 10, 10);
   padding: 1rem;
   backdrop-filter: blur(10px);
   text-align: center;
