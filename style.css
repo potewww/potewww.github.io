@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
 }
 nav {
-  background-color: #0f0a14;
+  background-color: #3a3640;
   padding: 1rem;
   backdrop-filter: blur(10px);
   text-align: center;
@@ -24,7 +24,40 @@ nav a:hover {
   opacity: 0.7;
   text-decoration: none;
 }
-
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: flex-start;
+}
+.descrizione {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  min-width: 200px;
+  max-width: 200px;
+}
+.content-left {
+  flex: 1;
+}
+.content-right {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
+}
+.fototessera {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  float: none;
+  margin: 0;
+}
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -39,11 +72,38 @@ h2 {
   margin-bottom: 1rem;
   color: #dcc8f0;
 }
-
+.content-left p, .content-left ul {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0.3rem 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 0.3rem 0;
+}
 .container a {
   color: #c9a9e0;
   text-decoration: underline;
 }
+.riga {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 0 0 10%;;
+}
+.riga p {
+  flex: 1;
+}
 .container a:hover {
   color: #e0c9f0;
+}
+.container-appunti {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
 }
