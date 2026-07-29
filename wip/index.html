@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work in Progress</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <button class="hamburger" id="hamburger" aria-label="Apri menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a href="../home.html" class="home-button" aria-label="Torna alla home">🏠</a>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="nav-menu" id="navMenu"></nav>
+
+  <main class="content-page">
+    <div class="content-header">
+      <h1>Work in Progress</h1>
+      <p>Sezione in costruzione: qui compariranno i progetti ancora in lavorazione.</p>
+    </div>
+  </main>
+
+  <footer class="static"><a href="https://potewww.github.io/home.html">potewww | Filippo Rossi</a></footer>
+
+  <script src="../menu-data.js"></script>
+  <script src="../menu.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      navMenu.classList.add('open');
+      navOverlay.classList.add('open');
+    }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('open');
+    }
+    function toggleMenu() {
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+    navOverlay.addEventListener('click', closeMenu);
+    document.addEventListener('click', (e) => {
+      if (
+        navMenu.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+/* ===========================================
+   Reset base + layout a tutta altezza
+   =========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer { text-align: center; padding: 1.5rem; font-size: .8rem; color: #999; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Footer "normale": segue il contenuto invece di restare ancorato.
+   Usato nelle pagine con liste lunghe (es. Appunti), dove un footer
+   fisso finirebbe per sovrapporsi al contenuto. */
+footer.static {
+  position: static;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  margin-top: 40px;
+}
+
+/* ===========================================
+   Griglia di quadrati con emoji + didascalia
+   3 quadrati per riga, centrati nello schermo
+   =========================================== */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 660px;
+  width: 100%;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdce0;
+  border-radius: 14px;
+  box-shadow: 0 3px 0 #dcdce0, 0 4px 8px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  border-color: #c2c2ca;
+  box-shadow: 0 5px 0 #c2c2ca, 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item:active {
+  transform: translateY(3px);
+  border-color: #a8a8b2;
+  background-color: #f0f0f2;
+  box-shadow: 0 0 0 #a8a8b2, 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.item .emoji {
+  font-size: 3.4rem;
+  line-height: 1;
+}
+
+.item .caption {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #333;
+  text-align: center;
+}
+
+/* ===========================================
+   Menu Hamburger (in alto a destra)
+   =========================================== */
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdce0;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.hamburger:hover {
+  border-color: #c2c2ca;
+}
+
+/* Pulsante Home (in alto a sinistra, su tutte le pagine tranne la home) */
+.home-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdce0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.home-button:hover {
+  border-color: #c2c2ca;
+  transform: translateY(-1px);
+}
+
+.home-button:active {
+  transform: translateY(1px);
+  background-color: #f0f0f2;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay dietro il menu, intercetta i click "fuori" */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 800;
+  display: none;
+}
+
+.nav-overlay.open {
+  display: block;
+}
+
+/* Menu a tendina (dropdown) sotto l'hamburger */
+.nav-menu {
+  position: fixed;
+  top: 72px;
+  right: 20px;
+  width: 220px;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdce0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  z-index: 900;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 4px;
+}
+
+.nav-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.nav-menu > ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-menu > ul > li > a:hover {
+  background-color: #f0f0f2;
+  color: #000;
+}
+
+/* Sottomenu a tendina (Math, Projects, ecc.) */
+.submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.submenu-label {
+  flex: 1;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.submenu-label:hover {
+  background-color: #f0f0f2;
+  color: #000;
+}
+
+.submenu-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.15s ease;
+}
+
+.submenu-arrow:hover {
+  background-color: #f0f0f2;
+}
+
+.has-submenu.open > .submenu-toggle .submenu-arrow {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.nav-menu .submenu {
+  padding-left: 28px;
+}
+
+.nav-menu .submenu .submenu {
+  padding-left: 44px;
+}
+
+.has-submenu.open > .submenu {
+  max-height: 500px;
+}
+
+.submenu a {
+  display: block;
+  font-size: 0.88rem;
+  color: #333;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.submenu a:hover {
+  background-color: #f0f0f2;
+  color: #000;
+}
+
+/* ===========================================
+   Pagine di tipo "lista" (es. Appunti)
+   =========================================== */
+
+.content-page {
+  flex: 1;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 80px 32px 100px;
+}
+
+.content-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+.content-header h1 {
+  font-size: 2.9rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.content-header p {
+  flex: 1;
+  min-width: 260px;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.year-section {
+  margin-bottom: 44px;
+}
+
+.year-section:last-child {
+  margin-bottom: 0;
+}
+
+.year-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid #dcdce0;
+}
+
+.year-heading .count {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.appunti-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.appunti-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdce0;
+  border-radius: 14px;
+  box-shadow: 0 3px 0 #dcdce0, 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.15s ease;
+}
+
+.appunti-item:hover {
+  transform: translateY(-2px);
+  border-color: #c2c2ca;
+  box-shadow: 0 5px 0 #c2c2ca, 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appunti-item .title {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.appunti-item .pdf-link {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid #dcdce0;
+  border-radius: 8px;
+  padding: 9px 18px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.appunti-item .pdf-link:hover {
+  background-color: #f0f0f2;
+  border-color: #c2c2ca;
+}
+
+@media (max-width: 600px) {
+  .content-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .content-page {
+    padding: 60px 20px 80px;
+  }
+
+  .content-header h1 {
+    font-size: 2.2rem;
+    white-space: normal;
+  }
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 480px;
+    padding: 24px;
+  }
+
+  .item {
+    aspect-ratio: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+  }
+
+  .item .emoji {
+    font-size: 3rem;
+  }
+
+  .item .caption {
+    margin-top: 0;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .hamburger {
+    top: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+    gap: 6px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .home-button {
+    top: 16px;
+    left: 16px;
+    width: 56px;
+    height: 56px;
+    font-size: 1.7rem;
+  }
+
+  .nav-menu {
+    top: 84px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+}

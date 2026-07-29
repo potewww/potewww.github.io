@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Pulsante hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Apri menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay dietro il menu -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Menu laterale (viene riempito automaticamente da menu.js) -->
+  <nav class="nav-menu" id="navMenu"></nav>
+
+  <main class="page">
+    <div class="grid-container">
+      <a href="math/index.html" class="item">
+        <div class="emoji">🧮</div>
+        <div class="caption">Math</div>
+      </a>
+      <a href="projects/index.html" class="item">
+        <div class="emoji">🧩</div>
+        <div class="caption">Projects</div>
+      </a>
+      <a href="wip/index.html" class="item">
+        <div class="emoji">🛠️</div>
+        <div class="caption">Work in Progress</div>
+      </a>
+    </div>
+  </main>
+
+  <footer><a href="https://potewww.github.io/home.html">potewww | Filippo Rossi</a></footer>
+
+  <script src="menu-data.js"></script>
+  <script src="menu.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      navMenu.classList.add('open');
+      navOverlay.classList.add('open');
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('open');
+    }
+
+    function toggleMenu() {
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+      if (
+        navMenu.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

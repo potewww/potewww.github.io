@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appunti</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Pulsante hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Apri menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Pulsante Home -->
+  <a href="../home.html" class="home-button" aria-label="Torna alla home">🏠</a>
+
+  <!-- Overlay dietro il menu -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Menu laterale (viene riempito automaticamente da menu.js) -->
+  <nav class="nav-menu" id="navMenu"></nav>
+
+  <main class="content-page">
+
+    <div class="content-header">
+      <h1>Appunti</h1>
+      <p>
+        In questa sezione sono presenti gli appunti di alcuni corsi che ho seguito e alcuni
+        file preparati per sostenere degli esami (esercizi oppure presentazioni/seminari).
+        I seguenti materiali sono stati redatti da me come studente; di conseguenza,
+        potrebbero contenere errori di battitura o imprecisioni. Per qualsiasi segnalazione,
+        non esitate a contattarmi.
+      </p>
+    </div>
+
+    <!-- Anno accademico 2025-2026 -->
+    <section class="year-section">
+      <h2 class="year-heading">
+        a.a. 2025-2026 <span class="count">5 file</span>
+      </h2>
+      <div class="appunti-list">
+
+        <div class="appunti-item">
+          <span class="title">Esercizi per l'esame del corso di FM530</span>
+          <a class="pdf-link" href="appunti/FM530__EX.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di FM530</span>
+          <a class="pdf-link" href="appunti/FM530_seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Presentazione del seminario per l'esame del corso di FM530</span>
+          <a class="pdf-link" href="appunti/FM530_presentazione.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Esercizi del corso "Introduction aux catégories"</span>
+          <a class="pdf-link" href="appunti/ex-cat.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Appunti di AN410</span>
+          <a class="pdf-link" href="appunti/AN410-11.pdf" target="_blank">PDF</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Anno accademico 2024-2025 -->
+    <section class="year-section">
+      <h2 class="year-heading">
+        a.a. 2024-2025 <span class="count">9 file</span>
+      </h2>
+      <div class="appunti-list">
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di CR510</span>
+          <a class="pdf-link" href="appunti/CR510___Seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Teoremi del corso CR510</span>
+          <a class="pdf-link" href="appunti/CR510___Theorems.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Algoritmi e i crittosistemi del corso di CR510</span>
+          <a class="pdf-link" href="appunti/CR510_algoritmi.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di GE510</span>
+          <a class="pdf-link" href="appunti/GE510___Seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Appunti di una parte del corso di GE510</span>
+          <a class="pdf-link" href="appunti/GE510___Propriet%C3%A0_per_schemi_e_teoria-8.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di AL440</span>
+          <a class="pdf-link" href="appunti/AL440___Seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di GE410</span>
+          <a class="pdf-link" href="appunti/GE410___Seminar-2.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di GE450</span>
+          <a class="pdf-link" href="appunti/GE450___Seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di AL410</span>
+          <a class="pdf-link" href="appunti/AL410___Seminar.pdf" target="_blank">PDF</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Anno accademico 2023-2024 -->
+    <section class="year-section">
+      <h2 class="year-heading">
+        a.a. 2023-2024 <span class="count">1 file</span>
+      </h2>
+      <div class="appunti-list">
+
+        <div class="appunti-item">
+          <span class="title">Seminario per l'esame del corso di GE460</span>
+          <a class="pdf-link" href="appunti/GE460___Seminario.pdf" target="_blank">PDF</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="static"><a href="https://potewww.github.io/home.html">potewww | Filippo Rossi</a></footer>
+
+  <script src="../menu-data.js"></script>
+  <script src="../menu.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      navMenu.classList.add('open');
+      navOverlay.classList.add('open');
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('open');
+    }
+
+    function toggleMenu() {
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+      if (
+        navMenu.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
