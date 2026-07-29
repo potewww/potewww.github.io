@@ -451,7 +451,7 @@ footer.static {
   }
 
   .content-page {
-    padding: 60px 20px 80px;
+    padding: 96px 20px 80px;
   }
 
   .content-header h1 {
@@ -473,21 +473,19 @@ footer.static {
   }
 
   .item {
-    aspect-ratio: auto;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 24px 28px;
-    gap: 22px;
+    aspect-ratio: 1 / 1;
+    max-width: 280px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .item .emoji {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 
   .item .caption {
-    margin-top: 0;
+    margin-top: 16px;
     font-size: 1.3rem;
-    text-align: left;
   }
 
   .hamburger {
