@@ -538,5 +538,7 @@ footer.static {
   .page {
     min-height: auto;
     padding-bottom: 24px;
+    align-items: flex-start;
+    padding-top: 96px;
   }
 }
