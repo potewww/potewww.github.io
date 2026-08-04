@@ -15,6 +15,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('pattern.png');
+  background-repeat: repeat;
+  background-size: 400px 400px; /* o la dimensione della tua tile */
 }
 
 .page {
