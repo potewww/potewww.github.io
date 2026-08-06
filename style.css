@@ -15,9 +15,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-    background-image: url('pattern.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto; /* larghezza piena, altezza proporzionata */
 }
 
 .page {
