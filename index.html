@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>potewww — Filippo Rossi</title>
+  <meta name="description" content="Personal site of Filippo Rossi">
+
+  <!-- Style & Fonts -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <!-- Left section: Logo + Name Trigger -->
+      <div class="logo-wrapper">
+        <button id="logo-btn" class="logo-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            class="logo-icon"
+            aria-hidden="true"
+          >
+            <!-- Thin draft lines -->
+            <g stroke-width="0.5" opacity="0.5">
+              <line x1="2" y1="13" x2="26" y2="13" />
+              <line x1="13" y1="2" x2="13" y2="28" />
+              <line x1="20" y1="20" x2="20" y2="25" />
+              <line x1="16" y1="20" x2="25" y2="20" />
+              <circle cx="20" cy="25" r="0.5" fill="currentColor" stroke="none" />
+              <circle cx="25" cy="20" r="0.5" fill="currentColor" stroke="none" />
+            </g>
+            <!-- Thick P shape -->
+            <path
+              d="M 6 26 L 6 6 L 20 6 L 20 16 A 4 4 0 0 1 16 20 L 6 20"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+            />
+            <!-- Center dot -->
+            <circle cx="13" cy="13" r="1.5" fill="currentColor" stroke="none" />
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">potewww</span>
+            <span class="logo-subtitle">Filippo Rossi</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Right section: Theme Toggle Button -->
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+        <!-- Sun / Moon SVG rendered dynamically by main.js -->
+      </button>
+
+      <!-- Navigation Drawer Backdrop Overlay -->
+      <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+      <!-- Navigation Drawer Side Panel -->
+      <div id="nav-panel" class="nav-panel" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+        <div class="nav-panel-header">
+          <div class="nav-header-line"></div>
+          <button id="nav-close-btn" class="nav-close-btn" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="nav-content">
+          <!-- Row 1: Math - Appunti -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 100ms;">Math</div>
+            <div class="nav-item-body" style="transition-delay: 120ms;">
+              <span class="nav-row-title">Appunti</span>
+              <span class="nav-row-detail">Notes & Lectures</span>
+            </div>
+            <div class="nav-divider full" style="transition-delay: 100ms;"></div>
+          </div>
+
+          <!-- Row 2: Math - Tutorati -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 145ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 165ms;">
+              <span class="nav-row-title">Tutorati</span>
+              <span class="nav-row-detail">Tutoring Sessions</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 145ms;"></div>
+          </div>
+
+          <!-- Row 3: Projects - PoteSplit -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 190ms;">Projects</div>
+            <div class="nav-item-body" style="transition-delay: 210ms;">
+              <span class="nav-row-title">PoteSplit</span>
+              <span class="nav-row-detail">Web Application</span>
+            </div>
+            <div class="nav-divider full" style="transition-delay: 190ms;"></div>
+          </div>
+
+          <!-- Row 4: Projects - TV-Tracker -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 235ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 255ms;">
+              <span class="nav-row-title">TV-Tracker</span>
+              <span class="nav-row-detail">Entertainment Tracker</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 235ms;"></div>
+          </div>
+
+          <!-- Row 5: Projects - YouTube -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 280ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 300ms;">
+              <span class="nav-row-title">YouTube</span>
+              <span class="nav-row-detail">Video Channel</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 280ms;"></div>
+          </div>
+
+          <!-- Row 6: WIP - prova2 -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 325ms;">WIP</div>
+            <div class="nav-item-body" style="transition-delay: 345ms;">
+              <span class="nav-row-title">prova2</span>
+              <span class="nav-row-detail">Experimental Draft</span>
+            </div>
+            <div class="nav-divider full" style="transition-delay: 325ms;"></div>
+          </div>
+
+          <!-- Row 7: WIP - prova3 -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 370ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 390ms;">
+              <span class="nav-row-title">prova3</span>
+              <span class="nav-row-detail">Experimental Draft</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 370ms;"></div>
+          </div>
+
+          <!-- Row 8: WIP - prova4 -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 415ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 435ms;">
+              <span class="nav-row-title">prova4</span>
+              <span class="nav-row-detail">Experimental Draft</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 415ms;"></div>
+          </div>
+
+          <!-- Row 9: WIP - Prov6 -->
+          <div class="nav-row">
+            <div class="nav-category" style="transition-delay: 460ms;"></div>
+            <div class="nav-item-body" style="transition-delay: 480ms;">
+              <span class="nav-row-title">Prov6</span>
+              <span class="nav-row-detail">Experimental Draft</span>
+            </div>
+            <div class="nav-divider indented" style="transition-delay: 460ms;"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="cards-grid">
+        <!-- Math Card -->
+        <article class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper">
+            <svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+              <line x1="40" y1="140" x2="40" y2="35" stroke="currentColor" stroke-width="1.2" />
+              <path d="M37 41 L40 35 L43 41" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+              <line x1="35" y1="60" x2="165" y2="60" stroke="currentColor" stroke-width="1.2" />
+              <path d="M159 57 L165 60 L159 63" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+              <line x1="35" y1="95" x2="165" y2="95" stroke="currentColor" stroke-width="1.2" />
+              <path d="M159 92 L165 95 L159 98" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+              <line x1="35" y1="130" x2="165" y2="130" stroke="currentColor" stroke-width="1.2" />
+              <path d="M159 127 L165 130 L159 133" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+              <circle cx="40" cy="60" r="1.5" fill="currentColor" />
+              <circle cx="40" cy="95" r="1.5" fill="currentColor" />
+              <circle cx="40" cy="130" r="1.5" fill="currentColor" />
+
+              <circle cx="65" cy="60" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="105" cy="60" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+
+              <circle cx="65" cy="95" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+              <circle cx="105" cy="95" r="6.5" fill="rgba(185, 186, 245, 0.2)" stroke="#B9BAF5" stroke-width="1.2" opacity="0.8" />
+              <circle cx="130" cy="95" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+
+              <circle cx="65" cy="130" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+              <circle cx="115" cy="130" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">Math</span>
+          </div>
+        </article>
+
+        <!-- Projects Card -->
+        <article class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper">
+            <svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+              <line x1="100" y1="90" x2="40" y2="125" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+              <line x1="100" y1="90" x2="160" y2="125" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+              <line x1="100" y1="90" x2="100" y2="30" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+
+              <g opacity="0.6">
+                <path d="M88,69 L100,62 L112,69 L100,76 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M88,69 L100,76 L100,90 L88,83 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M112,69 L100,76 L100,90 L112,83 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+
+              <g opacity="0.6">
+                <path d="M76,83 L88,76 L100,83 L88,90 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M76,83 L88,90 L88,104 L76,97 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M100,83 L88,90 L88,104 L100,97 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+
+              <g opacity="0.6">
+                <path d="M100,83 L112,76 L124,83 L112,90 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M100,83 L112,90 L112,104 L100,97 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M124,83 L112,90 L112,104 L124,97 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+
+              <g>
+                <path d="M88,83 L100,76 L112,83 L100,90 Z" fill="rgba(185, 186, 245, 0.45)" stroke="#B9BAF5" stroke-width="1.2" />
+                <path d="M88,83 L100,90 L100,104 L88,97 Z" fill="rgba(185, 186, 245, 0.3)" stroke="#B9BAF5" stroke-width="1.2" />
+                <path d="M112,83 L100,90 L100,104 L112,97 Z" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.2" />
+              </g>
+
+              <g opacity="0.6">
+                <path d="M76,97 L88,90 L100,97 L88,104 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M76,97 L88,104 L88,118 L76,111 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M100,97 L88,104 L88,118 L100,111 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+
+              <g opacity="0.6">
+                <path d="M100,97 L112,90 L124,97 L112,104 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M100,97 L112,104 L112,118 L100,111 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M124,97 L112,104 L112,118 L124,111 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+
+              <g opacity="0.6">
+                <path d="M88,55 L100,48 L112,55 L100,62 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M88,55 L100,62 L100,76 L88,69 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+                <path d="M112,55 L100,62 L100,76 L112,69 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">Projects</span>
+          </div>
+        </article>
+
+        <!-- Work in Progress Card -->
+        <article class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper">
+            <svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+              <circle cx="100" cy="90" r="40" stroke="currentColor" stroke-width="0.8" opacity="0.3" />
+
+              <line x1="40" y1="90" x2="160" y2="90" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3" />
+              <line x1="100" y1="35" x2="100" y2="145" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3" />
+
+              <path
+                d="M 45,115 C 53,100 58,102 64,102 C 75,102 78,115 83,115 C 95,115 102,75 110,75 C 120,75 130,108 138,108 C 144,108 148,95 152,95 C 158,95 160,88 165,88"
+                stroke="#B9BAF5"
+                stroke-width="1.6"
+                fill="none"
+              />
+
+              <circle cx="45" cy="115" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="64" cy="102" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="83" cy="115" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="110" cy="75" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="138" cy="108" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="152" cy="95" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+              <circle cx="165" cy="88" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">Work in Progress</span>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
