@@ -1,7 +1,7 @@
 /**
  * Reusable Global Header & Dropdown Navigation Menu Component
  * Renders the site header, theme toggle, and drawer navigation menu
- * dynamically across all pages.
+ * dynamically across all pages using assets from assets/icons/.
  */
 class NavMenuComponent {
   constructor() {
@@ -9,10 +9,9 @@ class NavMenuComponent {
     this.isNavOpen = false;
   }
 
-  render(targetContainerId = 'site-header') {
+  async render(targetContainerId = 'site-header') {
     this.container = document.getElementById(targetContainerId);
     if (!this.container) {
-      // If container element isn't present, create one at top of site-wrapper or body
       const wrapper = document.querySelector('.site-wrapper') || document.body;
       this.container = document.createElement('header');
       this.container.id = targetContainerId;
@@ -42,12 +41,12 @@ class NavMenuComponent {
       });
     }
 
-    // Complete Header & Drawer HTML structure
+    // Header & Drawer HTML structure with data-svg pointing to assets/icons/
     this.container.innerHTML = `
       <!-- Left section: Logo + Name Trigger -->
       <div class="logo-wrapper">
         <button id="logo-btn" class="logo-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          ${typeof ICONS !== 'undefined' ? ICONS.logo : ''}
+          <span class="logo-icon-container" data-svg="assets/icons/logo.svg" data-svg-class="logo-icon"></span>
           <div class="logo-text">
             <span class="logo-title">potewww</span>
             <span class="logo-subtitle">Filippo Rossi</span>
@@ -57,7 +56,7 @@ class NavMenuComponent {
 
       <!-- Right section: Theme Toggle Button -->
       <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-        ${typeof ICONS !== 'undefined' ? ICONS.moon : ''}
+        <span class="theme-icon-container" data-svg="assets/icons/theme-moon.svg" data-svg-class="theme-icon"></span>
       </button>
 
       <!-- Navigation Drawer Backdrop Overlay -->
@@ -68,7 +67,7 @@ class NavMenuComponent {
         <div class="nav-panel-header">
           <div class="nav-header-line"></div>
           <button id="nav-close-btn" class="nav-close-btn" aria-label="Close menu">
-            ${typeof ICONS !== 'undefined' ? ICONS.close : ''}
+            <span class="close-icon-container" data-svg="assets/icons/close.svg"></span>
           </button>
         </div>
 
@@ -77,6 +76,10 @@ class NavMenuComponent {
         </nav>
       </div>
     `;
+
+    if (typeof svgLoader !== 'undefined') {
+      await svgLoader.loadAll();
+    }
 
     this.bindEvents();
   }
@@ -124,7 +127,6 @@ class NavMenuComponent {
       navBackdrop.addEventListener('click', () => toggleNav(false));
     }
 
-    // Close menu drawer when clicking a navigation link
     navLinks.forEach(link => {
       link.addEventListener('click', () => toggleNav(false));
     });
@@ -135,7 +137,6 @@ class NavMenuComponent {
       }
     });
 
-    // Initialize Theme Manager with theme button reference
     if (typeof themeManager !== 'undefined') {
       themeManager.init(themeToggleBtn);
     }

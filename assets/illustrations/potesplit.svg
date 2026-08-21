@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+  <g>
+    <path d="M88,83 L100,76 L112,83 L100,90 Z" fill="rgba(185, 186, 245, 0.45)" stroke="#B9BAF5" stroke-width="1.2" />
+    <path d="M88,83 L100,90 L100,104 L88,97 Z" fill="rgba(185, 186, 245, 0.3)" stroke="#B9BAF5" stroke-width="1.2" />
+    <path d="M112,83 L100,90 L100,104 L112,97 Z" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.2" />
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 /**
  * Theme Manager Utility
- * Manages light and dark theme switching and persistence.
+ * Manages light and dark theme switching and loads moon/sun icon assets.
  */
 class ThemeManager {
   constructor() {
@@ -29,13 +29,14 @@ class ThemeManager {
     }
   }
 
-  applyTheme(theme) {
+  async applyTheme(theme) {
     this.currentTheme = theme;
     this.root.classList.remove('light', 'dark');
     this.root.classList.add(theme);
 
-    if (this.toggleBtn && typeof ICONS !== 'undefined') {
-      this.toggleBtn.innerHTML = theme === 'light' ? ICONS.moon : ICONS.sun;
+    if (this.toggleBtn && typeof svgLoader !== 'undefined') {
+      const iconPath = theme === 'light' ? 'assets/icons/theme-moon.svg' : 'assets/icons/theme-sun.svg';
+      await svgLoader.loadInto(this.toggleBtn, iconPath, 'theme-icon');
     }
   }
 }

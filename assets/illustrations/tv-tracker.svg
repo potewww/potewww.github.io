@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+  <g opacity="0.8">
+    <path d="M76,83 L88,76 L100,83 L88,90 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M76,83 L88,90 L88,104 L76,97 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M100,83 L88,90 L88,104 L100,97 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+  <path d="M 83,115 C 95,115 102,75 110,75 C 120,75 130,108 138,108" stroke="#B9BAF5" stroke-width="1.6" fill="none" />
+  <circle cx="83" cy="115" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+  <circle cx="110" cy="75" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+  <circle cx="138" cy="108" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+</svg>
