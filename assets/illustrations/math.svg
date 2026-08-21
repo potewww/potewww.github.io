@@ -1,0 +1,27 @@
+<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+  <line x1="40" y1="140" x2="40" y2="35" stroke="currentColor" stroke-width="1.2" />
+  <path d="M37 41 L40 35 L43 41" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <line x1="35" y1="60" x2="165" y2="60" stroke="currentColor" stroke-width="1.2" />
+  <path d="M159 57 L165 60 L159 63" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <line x1="35" y1="95" x2="165" y2="95" stroke="currentColor" stroke-width="1.2" />
+  <path d="M159 92 L165 95 L159 98" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <line x1="35" y1="130" x2="165" y2="130" stroke="currentColor" stroke-width="1.2" />
+  <path d="M159 127 L165 130 L159 133" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <circle cx="40" cy="60" r="1.5" fill="currentColor" />
+  <circle cx="40" cy="95" r="1.5" fill="currentColor" />
+  <circle cx="40" cy="130" r="1.5" fill="currentColor" />
+
+  <circle cx="65" cy="60" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+  <circle cx="105" cy="60" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+
+  <circle cx="65" cy="95" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+  <circle cx="105" cy="95" r="6.5" fill="rgba(185, 186, 245, 0.2)" stroke="#B9BAF5" stroke-width="1.2" opacity="0.8" />
+  <circle cx="130" cy="95" r="6.5" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.4" />
+
+  <circle cx="65" cy="130" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+  <circle cx="115" cy="130" r="6.5" class="svg-muted-node" stroke-width="1.2" />
+</svg>

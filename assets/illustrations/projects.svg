@@ -1,0 +1,47 @@
+<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+  <line x1="100" y1="90" x2="40" y2="125" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+  <line x1="100" y1="90" x2="160" y2="125" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+  <line x1="100" y1="90" x2="100" y2="30" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4" />
+
+  <g opacity="0.6">
+    <path d="M88,69 L100,62 L112,69 L100,76 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M88,69 L100,76 L100,90 L88,83 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M112,69 L100,76 L100,90 L112,83 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+
+  <g opacity="0.6">
+    <path d="M76,83 L88,76 L100,83 L88,90 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M76,83 L88,90 L88,104 L76,97 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M100,83 L88,90 L88,104 L100,97 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+
+  <g opacity="0.6">
+    <path d="M100,83 L112,76 L124,83 L112,90 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M100,83 L112,90 L112,104 L100,97 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M124,83 L112,90 L112,104 L124,97 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+
+  <g>
+    <path d="M88,83 L100,76 L112,83 L100,90 Z" fill="rgba(185, 186, 245, 0.45)" stroke="#B9BAF5" stroke-width="1.2" />
+    <path d="M88,83 L100,90 L100,104 L88,97 Z" fill="rgba(185, 186, 245, 0.3)" stroke="#B9BAF5" stroke-width="1.2" />
+    <path d="M112,83 L100,90 L100,104 L112,97 Z" fill="rgba(185, 186, 245, 0.4)" stroke="#B9BAF5" stroke-width="1.2" />
+  </g>
+
+  <g opacity="0.6">
+    <path d="M76,97 L88,90 L100,97 L88,104 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M76,97 L88,104 L88,118 L76,111 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M100,97 L88,104 L88,118 L100,111 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+
+  <g opacity="0.6">
+    <path d="M100,97 L112,90 L124,97 L112,104 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M100,97 L112,104 L112,118 L100,111 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M124,97 L112,104 L112,118 L124,111 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+
+  <g opacity="0.6">
+    <path d="M88,55 L100,48 L112,55 L100,62 Z" fill="rgba(229, 231, 235, 0.15)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M88,55 L100,62 L100,76 L88,69 Z" fill="rgba(209, 213, 219, 0.1)" stroke="currentColor" stroke-width="0.8" />
+    <path d="M112,55 L100,62 L100,76 L112,69 Z" fill="rgba(243, 244, 246, 0.2)" stroke="currentColor" stroke-width="0.8" />
+  </g>
+</svg>
