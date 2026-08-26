@@ -1,55 +1,93 @@
-<!-- Sostituisci le card in projects.html con queste versioni che includono i link -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — potewww</title>
+  <meta name="description" content="Projects developed by Filippo Rossi">
 
-<!-- PoteSplit Card -->
-<a href="https://github.com/potewww/potesplit" target="_blank" id="potesplit" class="card-article">
-  <div class="card-border-overlay">
-    <div class="border-line top"></div>
-    <div class="border-line bottom"></div>
-    <div class="border-line left"></div>
-    <div class="border-line right"></div>
+  <!-- Style & Fonts -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Reusable Shared Header & Navigation Drawer -->
+    <header id="site-header"></header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <a href="index.html" class="back-btn">
+          <span data-svg="assets/icons/arrow-left.svg"></span>
+          Back to Home
+        </a>
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">Web apps, trackers, and content creation.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- PoteSplit Card -->
+        <article id="potesplit" class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper" data-svg="assets/illustrations/potesplit.svg" data-svg-class="illustration-svg"></div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">PoteSplit</span>
+            <span class="card-detail-text">Web Application</span>
+          </div>
+        </article>
+
+        <!-- TV-Tracker Card -->
+        <article id="tv-tracker" class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper" data-svg="assets/illustrations/tv-tracker.svg" data-svg-class="illustration-svg"></div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">TV-Tracker</span>
+            <span class="card-detail-text">Entertainment Tracker</span>
+          </div>
+        </article>
+
+        <!-- YouTube Card -->
+        <article id="youtube" class="card-article">
+          <div class="card-border-overlay">
+            <div class="border-line top"></div>
+            <div class="border-line bottom"></div>
+            <div class="border-line left"></div>
+            <div class="border-line right"></div>
+          </div>
+
+          <div class="illustration-wrapper" data-svg="assets/illustrations/youtube.svg" data-svg-class="illustration-svg"></div>
+
+          <div class="card-footer">
+            <div class="indicator-bar"></div>
+            <span class="card-label">YouTube</span>
+            <span class="card-detail-text">Video Channel</span>
+          </div>
+        </article>
+      </div>
+    </main>
   </div>
 
-  <div class="illustration-wrapper" data-svg="assets/illustrations/potesplit.svg" data-svg-class="illustration-svg"></div>
-
-  <div class="card-footer">
-    <div class="indicator-bar"></div>
-    <span class="card-label">PoteSplit</span>
-    <span class="card-detail-text">Web Application</span>
-  </div>
-</a>
-
-<!-- TV-Tracker Card -->
-<a href="https://github.com/potewww/tv-tracker" target="_blank" id="tv-tracker" class="card-article">
-  <div class="card-border-overlay">
-    <div class="border-line top"></div>
-    <div class="border-line bottom"></div>
-    <div class="border-line left"></div>
-    <div class="border-line right"></div>
-  </div>
-
-  <div class="illustration-wrapper" data-svg="assets/illustrations/tv-tracker.svg" data-svg-class="illustration-svg"></div>
-
-  <div class="card-footer">
-    <div class="indicator-bar"></div>
-    <span class="card-label">TV-Tracker</span>
-    <span class="card-detail-text">Entertainment Tracker</span>
-  </div>
-</a>
-
-<!-- YouTube Card -->
-<a href="https://www.youtube.com/@potewww" target="_blank" id="youtube" class="card-article">
-  <div class="card-border-overlay">
-    <div class="border-line top"></div>
-    <div class="border-line bottom"></div>
-    <div class="border-line left"></div>
-    <div class="border-line right"></div>
-  </div>
-
-  <div class="illustration-wrapper" data-svg="assets/illustrations/youtube.svg" data-svg-class="illustration-svg"></div>
-
-  <div class="card-footer">
-    <div class="indicator-bar"></div>
-    <span class="card-label">YouTube</span>
-    <span class="card-detail-text">Video Channel</span>
-  </div>
-</a>
+  <!-- Scripts -->
+  <script src="js/data/menu-data.js"></script>
+  <script src="js/utils/icons.js"></script>
+  <script src="js/utils/theme.js"></script>
+  <script src="js/components/nav-menu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
