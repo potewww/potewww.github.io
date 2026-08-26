@@ -1,11 +1,11 @@
-/* Appunti Page — Notes List */
+/* appunti.css */
 .appunti-wrapper {
   width: 100%;
-  max-width: 760px;
+  max-width: 960px;
 }
 
 .appunti-intro {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--muted-foreground);
   max-width: 640px;
@@ -13,6 +13,86 @@
   text-align: center;
 }
 
+/* Stili per la griglia delle card */
+.appunti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Stile della singola card */
+.appunti-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.appunti-card:hover {
+  border-color: #B9BAF5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Intestazione della card (icona + titolo) */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.file-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Descrizione */
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Link PDF */
+.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.pdf-link:hover {
+  background-color: #B9BAF5;
+  border-color: #B9BAF5;
+  color: #1a1a1a;
+}
+
+/* Intestazione anno (resta uguale) */
 .year-section {
   margin-bottom: 2rem;
 }
@@ -39,70 +119,4 @@
   font-weight: 500;
   color: var(--muted-foreground);
   white-space: nowrap;
-}
-
-.appunti-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.appunti-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--card);
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.appunti-item:hover {
-  border-color: #B9BAF5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
-}
-
-.appunti-item .item-title {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--foreground);
-  letter-spacing: -0.01em;
-  line-height: 1.4;
-}
-
-.appunti-item .pdf-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex-shrink: 0;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--foreground);
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 9999px;
-  border: 1px solid var(--border);
-  transition: all 0.2s ease;
-}
-
-.appunti-item .pdf-link span {
-  display: inline-flex;
-  width: 13px;
-  height: 13px;
-}
-
-.appunti-item .pdf-link:hover {
-  background-color: #B9BAF5;
-  border-color: #B9BAF5;
-  color: #1a1a1a;
-}
-
-@media (min-width: 640px) {
-  .appunti-item .item-title {
-    font-size: 0.9rem;
-  }
 }
