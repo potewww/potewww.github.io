@@ -1,0 +1,108 @@
+/* Appunti Page — Notes List */
+.appunti-wrapper {
+  width: 100%;
+  max-width: 760px;
+}
+
+.appunti-intro {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 640px;
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+}
+
+.year-section {
+  margin-bottom: 2rem;
+}
+
+.year-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.year-heading .year-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.year-heading .count {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+.appunti-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.appunti-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appunti-item:hover {
+  border-color: #B9BAF5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.appunti-item .item-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.appunti-item .pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--foreground);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.appunti-item .pdf-link span {
+  display: inline-flex;
+  width: 13px;
+  height: 13px;
+}
+
+.appunti-item .pdf-link:hover {
+  background-color: #B9BAF5;
+  border-color: #B9BAF5;
+  color: #1a1a1a;
+}
+
+@media (min-width: 640px) {
+  .appunti-item .item-title {
+    font-size: 0.9rem;
+  }
+}

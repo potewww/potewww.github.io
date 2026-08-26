@@ -9,7 +9,7 @@ const NAV_MENU_DATA = [
       {
         title: 'Appunti',
         detail: 'Notes & Lectures',
-        url: 'math.html#appunti',
+        url: 'appunti.html',
         dividerType: 'full',
         categoryDelay: '100ms',
         bodyDelay: '120ms',
