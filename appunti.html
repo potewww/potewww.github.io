@@ -7,7 +7,15 @@
   <meta name="description" content="Lecture notes and exam materials by Filippo Rossi">
 
   <!-- Style & Fonts -->
-  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=2115">
 </head>
 <body>
   <div class="site-wrapper">
@@ -15,7 +23,7 @@
     <header id="site-header"></header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content appunti-main">
       <div class="page-header">
         <a href="math.html" class="back-btn">
           <span data-svg="assets/icons/arrow-left.svg"></span>

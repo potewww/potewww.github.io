@@ -7,7 +7,15 @@
   <meta name="description" content="Personal site of Filippo Rossi">
 
   <!-- Style & Fonts -->
-  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=2115">
 </head>
 <body>
   <div class="site-wrapper">

@@ -7,7 +7,15 @@
   <meta name="description" content="Projects developed by Filippo Rossi">
 
   <!-- Style & Fonts -->
-  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=2115">
 </head>
 <body>
   <div class="site-wrapper">
@@ -25,7 +33,7 @@
         <p class="page-subtitle">Web apps, trackers, and content creation.</p>
       </div>
 
-      <div class="cards-grid">
+      <div class="cards-grid detail-grid">
         <!-- PoteSplit Card -->
         <article id="potesplit" class="card-article">
           <div class="card-border-overlay">

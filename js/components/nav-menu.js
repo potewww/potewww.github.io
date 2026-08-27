@@ -109,6 +109,9 @@ class NavMenuComponent {
         document.body.classList.remove('nav-open');
         logoBtn.setAttribute('aria-expanded', 'false');
         navPanel.setAttribute('aria-hidden', 'true');
+        if (logoBtn && (document.activeElement === logoBtn || logoBtn.contains(document.activeElement))) {
+          logoBtn.blur();
+        }
       }
     };
 
@@ -140,6 +143,17 @@ class NavMenuComponent {
     if (typeof themeManager !== 'undefined') {
       themeManager.init(themeToggleBtn);
     }
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        this.container.classList.add('scrolled');
+      } else {
+        this.container.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
   }
 }
 

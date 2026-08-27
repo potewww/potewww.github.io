@@ -1,6 +1,6 @@
-@import './header.css';
-@import './cards.css';
-@import './appunti.css';
+@import './header.css?v=2115';
+@import './cards.css?v=2115';
+@import './appunti.css?v=2115';
 
 /* CSS Variables & Design System */
 :root {
@@ -42,7 +42,7 @@ html.dark {
   --muted-foreground: oklch(0.708 0 0);
   --accent: #B9BAF5;
   --accent-foreground: oklch(0.145 0 0);
-  --border: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.18);
   --input: rgba(255, 255, 255, 0.15);
   --ring: #B9BAF5;
 
@@ -67,7 +67,7 @@ html.dark {
     --muted-foreground: oklch(0.708 0 0);
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
-    --border: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.18);
     --input: rgba(255, 255, 255, 0.15);
     --ring: oklch(0.556 0 0);
 

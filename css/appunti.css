@@ -1,4 +1,19 @@
-/* appunti.css */
+/* appunti.css - Appunti Archive Styling */
+
+.appunti-main {
+  justify-content: flex-start !important;
+}
+
+.appunti-main .page-header {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin-bottom: 2rem !important;
+  max-width: 760px;
+}
+
 .appunti-wrapper {
   width: 100%;
   max-width: 960px;
@@ -92,7 +107,7 @@
   color: #1a1a1a;
 }
 
-/* Intestazione anno (resta uguale) */
+/* Intestazione anno */
 .year-section {
   margin-bottom: 2rem;
 }
@@ -119,4 +134,33 @@
   font-weight: 500;
   color: var(--muted-foreground);
   white-space: nowrap;
+}
+
+/* Mobile Overrides for Appunti Page */
+@media (max-width: 639px) {
+  .appunti-main .page-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .appunti-main .page-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  .appunti-intro {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .appunti-card {
+    padding: 1.25rem !important;
+  }
+
+  .appunti-card .card-title {
+    font-size: 0.95rem !important;
+  }
+
+  .appunti-card .card-desc {
+    font-size: 0.85rem !important;
+  }
 }

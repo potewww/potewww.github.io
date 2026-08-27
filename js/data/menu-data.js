@@ -10,7 +10,7 @@ const NAV_MENU_DATA = [
         title: 'Appunti',
         detail: 'Notes & Lectures',
         url: 'appunti.html',
-        dividerType: 'full',
+        dividerType: 'indented',
         categoryDelay: '100ms',
         bodyDelay: '120ms',
         dividerDelay: '100ms'
@@ -19,7 +19,7 @@ const NAV_MENU_DATA = [
         title: 'Tutorati',
         detail: 'Tutoring Sessions',
         url: 'math.html#tutorati',
-        dividerType: 'indented',
+        dividerType: 'full',
         categoryDelay: '145ms',
         bodyDelay: '165ms',
         dividerDelay: '145ms'
@@ -33,7 +33,7 @@ const NAV_MENU_DATA = [
         title: 'PoteSplit',
         detail: 'Web Application',
         url: 'projects.html#potesplit',
-        dividerType: 'full',
+        dividerType: 'indented',
         categoryDelay: '190ms',
         bodyDelay: '210ms',
         dividerDelay: '190ms'
@@ -51,7 +51,7 @@ const NAV_MENU_DATA = [
         title: 'YouTube',
         detail: 'Video Channel',
         url: 'projects.html#youtube',
-        dividerType: 'indented',
+        dividerType: 'full',
         categoryDelay: '280ms',
         bodyDelay: '300ms',
         dividerDelay: '280ms'
@@ -65,7 +65,7 @@ const NAV_MENU_DATA = [
         title: 'prova2',
         detail: 'Experimental Draft',
         url: 'wip.html#prova2',
-        dividerType: 'full',
+        dividerType: 'indented',
         categoryDelay: '325ms',
         bodyDelay: '345ms',
         dividerDelay: '325ms'
