@@ -1,21 +1,45 @@
-<svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
-  <circle cx="100" cy="90" r="40" stroke="currentColor" stroke-width="0.8" opacity="0.3" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 200 180">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-dasharray: 3 3;
+      }
 
-  <line x1="40" y1="90" x2="160" y2="90" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3" />
-  <line x1="100" y1="35" x2="100" y2="145" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3" />
+      .st0, .st1 {
+        isolation: isolate;
+        opacity: .3;
+        stroke: #000;
+        stroke-width: 2px;
+      }
 
-  <path
-    d="M 45,115 C 53,100 58,102 64,102 C 75,102 78,115 83,115 C 95,115 102,75 110,75 C 120,75 130,108 138,108 C 144,108 148,95 152,95 C 158,95 160,88 165,88"
-    stroke="#B9BAF5"
-    stroke-width="1.6"
-    fill="none"
-  />
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
 
-  <circle cx="45" cy="115" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="64" cy="102" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="83" cy="115" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="110" cy="75" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="138" cy="108" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="152" cy="95" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
-  <circle cx="165" cy="88" r="3" fill="var(--background)" stroke="#B9BAF5" stroke-width="1.4" />
+      .st2 {
+        stroke-width: 1.6px;
+      }
+
+      .st2, .st3 {
+        stroke: #b9baf5;
+      }
+
+      .st3 {
+        stroke-width: 1.4px;
+      }
+    </style>
+  </defs>
+  <circle class="st1" cx="100" cy="90" r="40"/>
+  <line class="st0" x1="40" y1="90" x2="160" y2="90"/>
+  <line class="st0" x1="100" y1="35" x2="100" y2="145"/>
+  <path class="st2" d="M45,115c8-15,13-13,19-13,11,0,14,13,19,13,12,0,19-40,27-40,10,0,20,33,28,33,6,0,10-13,14-13,6,0,8-7,13-7"/>
+  <circle class="st3" cx="45" cy="115" r="3"/>
+  <circle class="st3" cx="64" cy="102" r="3"/>
+  <circle class="st3" cx="83" cy="115" r="3"/>
+  <circle class="st3" cx="110" cy="75" r="3"/>
+  <circle class="st3" cx="138" cy="108" r="3"/>
+  <circle class="st3" cx="152" cy="95" r="3"/>
+  <circle class="st3" cx="165" cy="88" r="3"/>
 </svg>

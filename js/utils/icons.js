@@ -13,7 +13,8 @@ class SVGLoader {
     }
 
     try {
-      const response = await fetch(url);
+      const fetchUrl = url.includes('?') ? url : `${url}?v=2125`;
+      const response = await fetch(fetchUrl);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const text = await response.text();
       this.cache.set(url, text);

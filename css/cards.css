@@ -45,16 +45,17 @@
 @media (min-width: 640px) {
   .page-header {
     position: absolute;
-    bottom: calc(50% + 110px + 1.5rem);
+    bottom: calc(50% + 110px + 2.5rem);
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
   }
 
-  /* Multi-row detail pages (like WIP page with 4 cards across 2 rows) */
+  /* Multi-row detail pages (like WIP page or Projects with 4 cards across 2 rows) */
   .main-content:has(#prova2) .page-header,
-  .main-content:has(#prova4) .page-header {
-    bottom: calc(50% + 230px + 1.5rem);
+  .main-content:has(#prova4) .page-header,
+  .main-content:has(#chesescolamo) .page-header {
+    bottom: calc(50% + 230px + 2.5rem);
   }
 
   .cards-grid {
@@ -187,7 +188,7 @@
 
   .page-header {
     position: relative;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.6rem;
     max-width: 340px;
   }
 

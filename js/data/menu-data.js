@@ -51,10 +51,19 @@ const NAV_MENU_DATA = [
         title: 'YouTube',
         detail: 'Video Channel',
         url: 'projects.html#youtube',
-        dividerType: 'full',
+        dividerType: 'indented',
         categoryDelay: '280ms',
         bodyDelay: '300ms',
         dividerDelay: '280ms'
+      },
+      {
+        title: 'chesesCOLAmo',
+        detail: 'Off-Brand Drink Rating',
+        url: 'projects.html#chesescolamo',
+        dividerType: 'full',
+        categoryDelay: '325ms',
+        bodyDelay: '345ms',
+        dividerDelay: '325ms'
       }
     ]
   },
@@ -66,36 +75,36 @@ const NAV_MENU_DATA = [
         detail: 'Experimental Draft',
         url: 'wip.html#prova2',
         dividerType: 'indented',
-        categoryDelay: '325ms',
-        bodyDelay: '345ms',
-        dividerDelay: '325ms'
+        categoryDelay: '370ms',
+        bodyDelay: '390ms',
+        dividerDelay: '370ms'
       },
       {
         title: 'prova3',
         detail: 'Experimental Draft',
         url: 'wip.html#prova3',
         dividerType: 'indented',
-        categoryDelay: '370ms',
-        bodyDelay: '390ms',
-        dividerDelay: '370ms'
+        categoryDelay: '415ms',
+        bodyDelay: '435ms',
+        dividerDelay: '415ms'
       },
       {
         title: 'prova4',
         detail: 'Experimental Draft',
         url: 'wip.html#prova4',
         dividerType: 'indented',
-        categoryDelay: '415ms',
-        bodyDelay: '435ms',
-        dividerDelay: '415ms'
+        categoryDelay: '460ms',
+        bodyDelay: '480ms',
+        dividerDelay: '460ms'
       },
       {
         title: 'Prov6',
         detail: 'Experimental Draft',
         url: 'wip.html#prov6',
-        dividerType: 'indented',
-        categoryDelay: '460ms',
-        bodyDelay: '480ms',
-        dividerDelay: '460ms'
+        dividerType: 'full',
+        categoryDelay: '505ms',
+        bodyDelay: '525ms',
+        dividerDelay: '505ms'
       }
     ]
   }
