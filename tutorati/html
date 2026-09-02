@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filippo Rossi - Tutorati</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgb(160, 90, 210);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: rgb(160, 90, 210);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        th {
+            background-color: rgb(160, 90, 210);
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f9f4ff;
+        }
+
+        a.download-link {
+            color: rgb(160, 90, 210);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.download-link:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: rgb(160, 90, 210);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Materiale Tutorati</h1>
+            <p>Raccolta degli esercizi e delle soluzioni per ogni sessione di tutorato.</p>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sessione / Argomento</th>
+                    <th>Esercizi</th>
+                    <th>Soluzioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tutorato 1: Introduzione e Richiami</td>
+                    <td><a href="percorso/file/esercizi_tut1.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
+                    <td><a href="percorso/file/soluzioni_tut1.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
+                </tr>
+                <tr>
+                    <td>Tutorato 2: Applicazioni Pratiche</td>
+                    <td><a href="percorso/file/esercizi_tut2.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
+                    <td><a href="percorso/file/soluzioni_tut2.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
+                </tr>
+                <tr>
+                    <td>Tutorato 3: Approfondimenti</td>
+                    <td><a href="percorso/file/esercizi_tut3.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
+                    <td><a href="percorso/file/soluzioni_tut3.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="index.html" class="nav-link">← Torna alla Home</a>
+    </div>
+
+</body>
+</html>
