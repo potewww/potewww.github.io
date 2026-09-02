@@ -1,113 +1,114 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filippo Rossi - Tutorati</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        header {
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid rgb(160, 90, 210);
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: rgb(160, 90, 210);
-            margin: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        th {
-            background-color: rgb(160, 90, 210);
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        tr:hover {
-            background-color: #f9f4ff;
-        }
-
-        a.download-link {
-            color: rgb(160, 90, 210);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a.download-link:hover {
-            text-decoration: underline;
-        }
-        
-        .nav-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: rgb(160, 90, 210);
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filippo Rossi - Tutorati</title>
+  
+  <!-- Includi il tuo file CSS (Tailwind + stili personalizzati) come in appunti.html -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <div class="container">
-        <header>
-            <h1>Materiale Tutorati</h1>
-            <p>Raccolta degli esercizi e delle soluzioni per ogni sessione di tutorato.</p>
-        </header>
+  <div class="min-h-screen flex flex-col">
+    
+    <!-- Navbar (Opzionale: includila se usi un componente navbar globale) -->
+    <header class="bg-white shadow-sm"></header>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Sessione / Argomento</th>
-                    <th>Esercizi</th>
-                    <th>Soluzioni</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tutorato 1: Introduzione e Richiami</td>
-                    <td><a href="percorso/file/esercizi_tut1.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
-                    <td><a href="percorso/file/soluzioni_tut1.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
-                </tr>
-                <tr>
-                    <td>Tutorato 2: Applicazioni Pratiche</td>
-                    <td><a href="percorso/file/esercizi_tut2.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
-                    <td><a href="percorso/file/soluzioni_tut2.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
-                </tr>
-                <tr>
-                    <td>Tutorato 3: Approfondimenti</td>
-                    <td><a href="percorso/file/esercizi_tut3.pdf" class="download-link" target="_blank">Scarica Esercizi</a></td>
-                    <td><a href="percorso/file/soluzioni_tut3.pdf" class="download-link" target="_blank">Scarica Soluzioni</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Header della pagina -->
+      <div class="mb-10 text-center sm:text-left">
+        <a href="math.html" class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 mb-4 transition-colors duration-200">
+          <span class="mr-2">&larr;</span>
+          Back to Math
+        </a>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Tutorati</h1>
+        <p class="text-lg text-gray-600 max-w-2xl">Materiale relativo ai tutorati che ho tenuto.</p>
+      </div>
 
-        <a href="index.html" class="nav-link">← Torna alla Home</a>
-    </div>
+      <!-- Introduzione -->
+      <div class="space-y-12">
+        <p class="text-base text-gray-700 leading-relaxed bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          In questa sezione è possibile trovare i file degli esercizi e le relative soluzioni per le varie sessioni di tutorato che ho tenuto. 
+          I materiali sono suddivisi per corso e anno accademico.
+        </p>
 
+        <!-- Sezione: Esempio Corso 1 (es. Analisi Matematica) -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-center">
+            <span class="text-lg font-bold text-gray-800">Nome del Corso 1 (es. Analisi I) - a.a. 2025-2026</span>
+            <span class="text-sm font-medium text-gray-500 bg-gray-200 px-3 py-1 rounded-full mt-2 sm:mt-0">X file</span>
+          </div>
+          <div class="p-6 grid gap-6 sm:grid-cols-2">
+
+            <!-- Card: Esercizi Tutorato 1 -->
+            <div class="flex flex-col border border-gray-200 rounded-lg p-5 hover:border-purple-300 hover:shadow-md transition-all duration-200 bg-white group">
+              <div class="flex items-start mb-3">
+                <span class="text-purple-500 mr-3 mt-1 group-hover:text-purple-600">📄</span>
+                <h3 class="text-lg font-semibold text-gray-900 leading-tight">Esercizi Tutorato 1</h3>
+              </div>
+              <p class="text-sm text-gray-600 mb-4 flex-grow">Foglio di esercizi assegnato per il primo tutorato (es. Limiti e derivate).</p>
+              <a href="files/tutorati/corso1/esercizi_1.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 group-hover:underline">
+                <span>Apri PDF</span>
+              </a>
+            </div>
+
+            <!-- Card: Soluzioni Tutorato 1 -->
+            <div class="flex flex-col border border-gray-200 rounded-lg p-5 hover:border-purple-300 hover:shadow-md transition-all duration-200 bg-white group">
+              <div class="flex items-start mb-3">
+                <span class="text-green-500 mr-3 mt-1 group-hover:text-green-600">✅</span>
+                <h3 class="text-lg font-semibold text-gray-900 leading-tight">Soluzioni Tutorato 1</h3>
+              </div>
+              <p class="text-sm text-gray-600 mb-4 flex-grow">Soluzioni dettagliate degli esercizi del primo tutorato.</p>
+              <a href="files/tutorati/corso1/soluzioni_1.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 group-hover:underline">
+                <span>Apri PDF</span>
+              </a>
+            </div>
+            
+            <!-- Puoi aggiungere altre coppie Esercizi/Soluzioni qui -->
+
+          </div>
+        </section>
+
+        <!-- Sezione: Esempio Corso 2 -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-center">
+            <span class="text-lg font-bold text-gray-800">Nome del Corso 2 - a.a. 2024-2025</span>
+            <span class="text-sm font-medium text-gray-500 bg-gray-200 px-3 py-1 rounded-full mt-2 sm:mt-0">Y file</span>
+          </div>
+          <div class="p-6 grid gap-6 sm:grid-cols-2">
+
+             <!-- Card: Esercizi Tutorato 1 -->
+             <div class="flex flex-col border border-gray-200 rounded-lg p-5 hover:border-purple-300 hover:shadow-md transition-all duration-200 bg-white group">
+              <div class="flex items-start mb-3">
+                <span class="text-purple-500 mr-3 mt-1 group-hover:text-purple-600">📄</span>
+                <h3 class="text-lg font-semibold text-gray-900 leading-tight">Esercizi Tutorato 1</h3>
+              </div>
+              <p class="text-sm text-gray-600 mb-4 flex-grow">Argomento degli esercizi.</p>
+              <a href="files/tutorati/corso2/esercizi_1.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 group-hover:underline">
+                <span>Apri PDF</span>
+              </a>
+            </div>
+
+            <!-- Card: Soluzioni Tutorato 1 -->
+            <div class="flex flex-col border border-gray-200 rounded-lg p-5 hover:border-purple-300 hover:shadow-md transition-all duration-200 bg-white group">
+              <div class="flex items-start mb-3">
+                <span class="text-green-500 mr-3 mt-1 group-hover:text-green-600">✅</span>
+                <h3 class="text-lg font-semibold text-gray-900 leading-tight">Soluzioni Tutorato 1</h3>
+              </div>
+              <p class="text-sm text-gray-600 mb-4 flex-grow">Soluzioni dettagliate.</p>
+              <a href="files/tutorati/corso2/soluzioni_1.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 group-hover:underline">
+                <span>Apri PDF</span>
+              </a>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Includi i tuoi script se necessari -->
 </body>
 </html>
