@@ -3,69 +3,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Filippo Rossi - Tutorati</title>
-  
-  <!-- Richiamo al tuo nuovo file CSS -->
-  <link href="css/tutorati.css" rel="stylesheet">
+  <title>Tutorati — potewww</title>
+  <meta name="description" content="Esercizi e soluzioni delle sessioni di tutorato — Filippo Rossi">
+
+  <!-- Theme init (FOUC prevention) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=2116">
+  <link rel="stylesheet" href="css/tutorati.css?v=2116">
 </head>
 <body>
+  <div class="site-wrapper">
+    <!-- Reusable Shared Header & Navigation Drawer -->
+    <header id="site-header"></header>
 
-  <main>
-    <a href="math.html" class="back-link">← Back to Math</a>
-    <h1>Tutorati</h1>
-    <p class="description">
-      In questa sezione è possibile trovare i file degli esercizi e le relative soluzioni per le varie sessioni di tutorato che ho tenuto. I materiali sono suddivisi per corso e anno accademico.
-    </p>
-
-    <!-- SEZIONE CORSO 1 -->
-    <section class="course-section">
-      <div class="course-header">
-        <span class="course-title">Nome del Corso 1 (es. Analisi I) - a.a. 2025-2026</span>
-        <span class="file-count">2 file</span>
+    <!-- Main Content -->
+    <main class="main-content tutorati-main">
+      <div class="page-header">
+        <a href="math.html" class="back-btn">
+          <span data-svg="assets/icons/arrow-left.svg"></span>
+          Back to Math
+        </a>
+        <h1 class="page-title">Tutorati</h1>
+        <p class="page-subtitle">Esercizi e soluzioni per le sessioni di tutorato.</p>
       </div>
-      
-      <div class="cards-grid">
-        <!-- Esercizi -->
-        <div class="card">
-          <h3>📄 Esercizi Tutorato 1</h3>
-          <p>Foglio di esercizi assegnato per il primo tutorato (es. Limiti e derivate).</p>
-          <a href="files/tutorati/corso1/esercizi_1.pdf" target="_blank" class="pdf-link">Apri PDF</a>
+
+      <div class="tutorati-wrapper">
+        <p class="tutorati-intro">
+          In questa sezione sono presenti i materiali delle sessioni di tutorato che ho tenuto.
+          Per ogni sessione sono disponibili il foglio degli esercizi assegnati e le relative soluzioni.
+        </p>
+
+        <!-- ─── Search & Filters ─── -->
+        <div class="tutorati-toolbar" role="search">
+          <div class="search-wrapper">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="search"
+              id="tutorati-search"
+              class="search-input"
+              placeholder="Cerca corso, argomento…"
+              autocomplete="off"
+              aria-label="Cerca nei tutorati"
+            >
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filtra per anno accademico">
+            <button class="filter-tag active" data-filter="all">Tutti</button>
+            <button class="filter-tag" data-filter="2025-2026">2025–2026</button>
+            <button class="filter-tag" data-filter="2024-2025">2024–2025</button>
+            <button class="filter-tag" data-filter="2023-2024">2023–2024</button>
+          </div>
         </div>
 
-        <!-- Soluzioni -->
-        <div class="card">
-          <h3>✅ Soluzioni Tutorato 1</h3>
-          <p>Soluzioni dettagliate degli esercizi del primo tutorato.</p>
-          <a href="files/tutorati/corso1/soluzioni_1.pdf" target="_blank" class="pdf-link">Apri PDF</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEZIONE CORSO 2 -->
-    <section class="course-section">
-      <div class="course-header">
-        <span class="course-title">Nome del Corso 2 - a.a. 2024-2025</span>
-        <span class="file-count">2 file</span>
-      </div>
-      
-      <div class="cards-grid">
-        <!-- Esercizi -->
-        <div class="card">
-          <h3>📄 Esercizi Tutorato 1</h3>
-          <p>Argomento degli esercizi del primo tutorato.</p>
-          <a href="files/tutorati/corso2/esercizi_1.pdf" target="_blank" class="pdf-link">Apri PDF</a>
+        <!-- ─── Empty state ─── -->
+        <div class="tutorati-empty" id="tutorati-empty" hidden>
+          <p>Nessun risultato trovato.</p>
+          <p class="empty-hint">Prova a modificare la ricerca o i filtri.</p>
         </div>
 
-        <!-- Soluzioni -->
-        <div class="card">
-          <h3>✅ Soluzioni Tutorato 1</h3>
-          <p>Soluzioni dettagliate.</p>
-          <a href="files/tutorati/corso2/soluzioni_1.pdf" target="_blank" class="pdf-link">Apri PDF</a>
-        </div>
-      </div>
-    </section>
+        <!-- ─── Courses ─── -->
+        <div class="tutorati-courses" id="tutorati-courses">
 
-  </main>
+          <!-- ═══ Analisi I — a.a. 2025–2026 ═══ -->
+          <div class="course-accordion" data-year="2025-2026" data-course="Analisi I" data-keywords="analisi limiti derivate integrali successioni serie">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="course-analisi1-2526"
+              id="header-analisi1-2526"
+            >
+              <div class="accordion-info">
+                <span class="accordion-title">Analisi I</span>
+                <span class="accordion-year">a.a. 2025–2026</span>
+              </div>
+              <div class="accordion-meta">
+                <span class="accordion-count">10 sessioni</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="accordion-body"
+              id="course-analisi1-2526"
+              role="region"
+              aria-labelledby="header-analisi1-2526"
+            >
+              <div class="accordion-body-inner">
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">01</span><span class="session-topic">Limiti e continuità</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_1.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_1.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">02</span><span class="session-topic">Derivate</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_2.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_2.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">03</span><span class="session-topic">Studi di funzione</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_3.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_3.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">04</span><span class="session-topic">Integrali definiti</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_4.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_4.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">05</span><span class="session-topic">Integrali impropri</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_5.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_5.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">06</span><span class="session-topic">Successioni</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_6.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_6.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">07</span><span class="session-topic">Serie numeriche</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_7.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_7.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">08</span><span class="session-topic">Equazioni differenziali</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_8.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_8.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">09</span><span class="session-topic">Taylor e sviluppi</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_9.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_9.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">10</span><span class="session-topic">Ripasso generale</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi1/esercizi_10.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi1/soluzioni_10.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- ═══ Algebra Lineare — a.a. 2024–2025 ═══ -->
+          <div class="course-accordion" data-year="2024-2025" data-course="Algebra Lineare" data-keywords="algebra lineare matrici autovalori spazi vettoriali">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="course-algebra-2425"
+              id="header-algebra-2425"
+            >
+              <div class="accordion-info">
+                <span class="accordion-title">Algebra Lineare</span>
+                <span class="accordion-year">a.a. 2024–2025</span>
+              </div>
+              <div class="accordion-meta">
+                <span class="accordion-count">8 sessioni</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="accordion-body"
+              id="course-algebra-2425"
+              role="region"
+              aria-labelledby="header-algebra-2425"
+            >
+              <div class="accordion-body-inner">
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">01</span><span class="session-topic">Sistemi lineari</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_1.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_1.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">02</span><span class="session-topic">Matrici e determinanti</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_2.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_2.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">03</span><span class="session-topic">Spazi vettoriali</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_3.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_3.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">04</span><span class="session-topic">Applicazioni lineari</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_4.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_4.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">05</span><span class="session-topic">Autovalori e autovettori</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_5.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_5.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">06</span><span class="session-topic">Diagonalizzazione</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_6.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_6.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">07</span><span class="session-topic">Prodotti scalari</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_7.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_7.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">08</span><span class="session-topic">Ripasso generale</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/algebra/esercizi_8.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/algebra/soluzioni_8.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ Analisi II — a.a. 2023–2024 ═══ -->
+          <div class="course-accordion" data-year="2023-2024" data-course="Analisi II" data-keywords="analisi funzioni più variabili campi vettoriali integrali multipli">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="course-analisi2-2324"
+              id="header-analisi2-2324"
+            >
+              <div class="accordion-info">
+                <span class="accordion-title">Analisi II</span>
+                <span class="accordion-year">a.a. 2023–2024</span>
+              </div>
+              <div class="accordion-meta">
+                <span class="accordion-count">6 sessioni</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="accordion-body"
+              id="course-analisi2-2324"
+              role="region"
+              aria-labelledby="header-analisi2-2324"
+            >
+              <div class="accordion-body-inner">
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">01</span><span class="session-topic">Funzioni di più variabili</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_1.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_1.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">02</span><span class="session-topic">Derivate parziali e differenziale</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_2.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_2.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">03</span><span class="session-topic">Ottimizzazione vincolata</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_3.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_3.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">04</span><span class="session-topic">Integrali doppi</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_4.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_4.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">05</span><span class="session-topic">Integrali tripli e curvilinei</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_5.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_5.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+                <div class="session-row">
+                  <div class="session-info"><span class="session-num">06</span><span class="session-topic">Ripasso e simulazione d'esame</span></div>
+                  <div class="session-actions">
+                    <a class="btn-file" href="files/tutorati/analisi2/esercizi_6.pdf" target="_blank">Esercizi</a>
+                    <a class="btn-file btn-solution" href="files/tutorati/analisi2/soluzioni_6.pdf" target="_blank">Soluzioni</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#tutorati-courses -->
+      </div><!-- /.tutorati-wrapper -->
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data/menu-data.js?v=2116"></script>
+  <script src="js/utils/icons.js?v=2116"></script>
+  <script src="js/utils/theme.js?v=2116"></script>
+  <script src="js/components/nav-menu.js?v=2116"></script>
+  <script src="js/main.js?v=2116"></script>
+  <script src="js/tutorati.js?v=2116"></script>
 </body>
 </html>

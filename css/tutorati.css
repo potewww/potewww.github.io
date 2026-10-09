@@ -1,108 +1,446 @@
-/* Stili generali e tipografia */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    color: #333333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* tutorati.css — Tutorati Page Styles
+   Accordion courses, session rows, search & filter toolbar.
+   Built on top of the site's design tokens from style.css.
+*/
+
+/* ─── Page layout ─── */
+.tutorati-main {
+  justify-content: flex-start !important;
 }
 
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+.tutorati-main .page-header {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin-bottom: 2rem !important;
+  max-width: 760px;
 }
 
-/* Header della pagina */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    color: #111111;
+.tutorati-wrapper {
+  width: 100%;
+  max-width: 960px;
 }
 
-.back-link {
-    display: inline-block;
-    color: rgb(160, 90, 210);
-    text-decoration: none;
-    margin-bottom: 20px;
-    font-weight: 500;
+.tutorati-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 640px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
 }
 
-.back-link:hover {
-    text-decoration: underline;
+/* ═══════════════════════════════════════════
+   Search & Filter Toolbar
+   ═══════════════════════════════════════════ */
+.tutorati-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
 }
 
-.description {
-    color: #666666;
-    margin-bottom: 40px;
+/* Search field */
+.search-wrapper {
+  position: relative;
+  width: 100%;
 }
 
-/* Sezioni dei corsi */
-.course-section {
-    margin-bottom: 40px;
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+  opacity: 0.6;
 }
 
-.course-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid rgb(160, 90, 210);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+.search-input {
+  width: 100%;
+  padding: 0.55rem 0.85rem 0.55rem 2.5rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--foreground);
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.course-title {
-    font-weight: bold;
-    font-size: 1.2rem;
+.search-input::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.65;
 }
 
-.file-count {
-    color: #888888;
+.search-input:focus {
+  border-color: #B9BAF5;
+  box-shadow: 0 0 0 3px rgba(185, 186, 245, 0.18);
+}
+
+/* Filter tags row */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.filter-tag:hover {
+  border-color: #B9BAF5;
+  color: var(--foreground);
+}
+
+.filter-tag:focus-visible {
+  outline: 2px solid #B9BAF5;
+  outline-offset: 2px;
+}
+
+.filter-tag.active {
+  background-color: #B9BAF5;
+  border-color: #B9BAF5;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   Empty State
+   ═══════════════════════════════════════════ */
+.tutorati-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.tutorati-empty .empty-hint {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════
+   Course Accordion
+   ═══════════════════════════════════════════ */
+.tutorati-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.course-accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-accordion:hover {
+  border-color: rgba(185, 186, 245, 0.4);
+}
+
+.course-accordion[hidden] {
+  display: none;
+}
+
+/* Accordion header (the toggle button) */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  gap: 0.75rem;
+  text-align: left;
+  border-radius: var(--radius);
+  transition: background-color 0.15s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--muted);
+}
+
+.accordion-header:focus-visible {
+  outline: 2px solid #B9BAF5;
+  outline-offset: -2px;
+}
+
+.accordion-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.accordion-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accordion-year {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.accordion-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.accordion-count {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+/* Chevron rotation */
+.accordion-chevron {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  transition: transform 0.25s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+/* Accordion body — animated open/close */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-body-inner {
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+/* Top border when expanded */
+.accordion-header[aria-expanded="true"] + .accordion-body .accordion-body-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 0.35rem;
+}
+
+/* ═══════════════════════════════════════════
+   Session Rows
+   ═══════════════════════════════════════════ */
+.session-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+  min-height: 2.5rem;
+}
+
+.session-row + .session-row {
+  border-top: 1px solid var(--border);
+}
+
+.session-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.session-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #B9BAF5;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  min-width: 1.3rem;
+}
+
+.session-topic {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Action buttons */
+.session-actions {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.btn-file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+  padding: 0.3rem 0.65rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--border);
+  background-color: transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-file:hover {
+  background-color: #B9BAF5;
+  border-color: #B9BAF5;
+  color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(185, 186, 245, 0.2);
+}
+
+.btn-file:focus-visible {
+  outline: 2px solid #B9BAF5;
+  outline-offset: 2px;
+}
+
+/* Subtle variation for the "Soluzioni" button */
+.btn-solution {
+  border-style: dashed;
+}
+
+.btn-solution:hover {
+  border-style: solid;
+}
+
+/* ═══════════════════════════════════════════
+   Mobile — ≤639px
+   ═══════════════════════════════════════════ */
+@media (max-width: 639px) {
+  .tutorati-main .page-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .tutorati-main .page-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  .tutorati-intro {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .tutorati-toolbar {
+    gap: 0.6rem;
+  }
+
+  .search-input {
     font-size: 0.9rem;
+    padding: 0.6rem 0.85rem 0.6rem 2.5rem;
+  }
+
+  .filter-tag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  /* Accordion mobile tweaks */
+  .accordion-header {
+    padding: 0.75rem 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .accordion-info {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .accordion-title {
+    font-size: 0.88rem;
+  }
+
+  .accordion-year {
+    font-size: 0.7rem;
+  }
+
+  .accordion-body-inner {
+    padding: 0 0.65rem 0.4rem 0.65rem;
+  }
+
+  /* Session rows: keep side-by-side but tighter */
+  .session-row {
+    padding: 0.45rem 0.15rem;
+    gap: 0.5rem;
+  }
+
+  .session-info {
+    gap: 0.4rem;
+  }
+
+  .session-num {
+    font-size: 0.75rem;
+    min-width: 1.15rem;
+  }
+
+  .session-topic {
+    font-size: 0.78rem;
+  }
+
+  .session-actions {
+    gap: 0.25rem;
+  }
+
+  .btn-file {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
-/* Griglia delle schede (Cards) */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+/* ═══════════════════════════════════════════
+   Very small screens — ≤380px
+   Stack session actions below info
+   ═══════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .session-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.55rem 0.15rem;
+  }
 
-.card {
-    border: 1px solid #eeeeee;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #ffffff;
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
-}
+  .session-actions {
+    width: 100%;
+  }
 
-.card:hover {
-    border-color: rgb(160, 90, 210);
-    box-shadow: 0 4px 12px rgba(160, 90, 210, 0.1);
-}
-
-.card h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1rem;
-    color: #222222;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #555555;
-    margin-bottom: 20px;
-}
-
-/* Bottoni PDF */
-.pdf-link {
-    display: inline-block;
-    color: rgb(160, 90, 210);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.pdf-link:hover {
-    text-decoration: underline;
+  .btn-file {
+    flex: 1;
+  }
 }
